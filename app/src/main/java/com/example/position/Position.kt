@@ -105,7 +105,7 @@ fun Position(){
                 .fillMaxWidth()
                 .padding(top = 24.dp, bottom = 24.dp),
             horizontalArrangement = Arrangement.SpaceBetween
-        ){
+        ) {
             val names = listOf("Aarav", "Isha", "Rohan")
             val scores = listOf(1921, 8544, 7822)
 
@@ -148,7 +148,74 @@ fun Position(){
             }
         }
 
+        Spacer(modifier = Modifier.height(4.dp))
+
         //Bottom Section
+        Row (
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 24.dp)
+        ){
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                elevation = CardDefaults.cardElevation(4.dp),
+                shape = RoundedCornerShape(12.dp),
+                colors = CardColors(
+                    containerColor = Color.White,
+                    contentColor = Color.Black,
+                    disabledContentColor = Color.White,
+                    disabledContainerColor = Color.White
+                )
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 16.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "6"
+                    )
+
+                    Image(
+                        modifier = Modifier
+                            .height(48.dp)
+                            .width(48.dp)
+                            .clip(CircleShape)
+                            .padding(start = 8.dp),
+                        imageVector = Icons.Filled.AccountCircle,
+                        contentDescription = ""
+                    )
+
+                    Text(
+                        modifier = Modifier
+                            .padding(start = 8.dp),
+                        text = "Moira Rosa",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 16.sp
+                    )
+
+
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        horizontalAlignment = Alignment.End,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "1060",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 16.sp,
+                        )
+
+                        Text(
+                            text = "Points"
+                        )
+                    }
+                }
+            }
+        }
 
     }
 }
@@ -216,13 +283,6 @@ fun UserItemComposable(
             }
         }
     }
-
-    Spacer(
-        modifier = Modifier
-            .padding(top = 16.dp)
-    )
-
-
 }
 
 @Composable
